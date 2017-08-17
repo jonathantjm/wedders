@@ -1,0 +1,15 @@
+<template name="EventsList">
+	{{#if Template.subscriptionsReady}}
+		{{#each events}}
+			{{> Event}}
+		{{else}}
+			<div class="container">
+				<br />No events found. How about <a href="create-event">creating</a> a new event?
+			</div>
+		{{/each}}
+	{{else}}
+		<div class="container">
+			<p style="text-align: center"><img src="images/Circular_Loader.gif" /></p>
+		</div>
+	{{/if}}
+</template>

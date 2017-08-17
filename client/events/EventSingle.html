@@ -1,0 +1,75 @@
+<template name="EventSingle">
+	<div class="container">
+		<h3>{{event.name}}</h3>
+		<i class="fa fa-window-close" title="Delete"></i>
+		<i class="fa fa-address-book" title="Guest List"></i>
+		<i class="fa fa-pencil-square" title="Edit"></i>
+		<span class="tooltip">Hover over me
+  			<span class="tooltiptext">Tooltip text</span>
+		</span>
+		<table border="0" style="border-top: 2px solid #007ea7; width: 100%;">
+			<tr>
+				<td valign="top" width="100px" style="font-weight: bold; padding-top: 10px; padding-bottom: 10px;">Address:</td>
+				<td valign="top" style="padding-top: 10px;">{{event.address}}</td>
+			</tr>
+			<tr>
+				<td valign="top" width="100px" style="font-weight: bold; padding-bottom: 10px;">Start Date:</td>
+				<td valign="top">{{prettifyDate event.startDate}}</td>
+			</tr>
+			<tr>
+				<td valign="top" style="font-weight: bold; padding-bottom: 10px;">Description:</td>
+			</tr>
+			<tr>
+				<td colspan="2">{{{event.desc}}}</td>
+			</tr>
+		</table><br />
+
+		{{#if $.Session.get 'editMode'}}
+		<div class="dropDown">
+			<h1>Edit Event</h1>
+			<!--{{> quickForm collection="Events" id="updateEvents" type="update" doc=event}}-->
+			{{#autoForm id="updateEvent" type="update" doc=event collection="Events"}}
+		  	<div class="form-group {{#if afFieldIsInvalid name='name'}}has-error{{/if}}">
+		    <label class="control-label">{{afFieldLabelText name='name'}}</label>
+		    {{> afFieldInput name='name'}}
+		    {{#if afFieldIsInvalid name='name'}}
+		    <span class="help-block">{{{afFieldMessage name='name'}}}</span>
+		    {{/if}}
+		  	</div>
+
+		  	<div class="form-group {{#if afFieldIsInvalid name='address'}}has-error{{/if}}">
+		    <label class="control-label">{{afFieldLabelText name='address'}}</label>
+		    {{> afFieldInput name='address'}}
+		    {{#if afFieldIsInvalid name='address'}}
+		    <span class="help-block">{{{afFieldMessage name='address'}}}</span>
+		    {{/if}}
+		  	</div>
+
+		  	<div class="form-group {{#if afFieldIsInvalid name='startDate'}}has-error{{/if}}">
+		    <label class="control-label">{{afFieldLabelText name='startDate'}}</label>
+		    {{> afFieldInput name='startDate'}}
+		    {{#if afFieldIsInvalid name='startDate'}}
+		    <span class="help-block">{{{afFieldMessage name='startDate'}}}</span>
+		    {{/if}}
+		  	</div>
+
+		  	<div class="form-group {{#if afFieldIsInvalid name='desc'}}has-error{{/if}}">
+		    <label class="control-label">{{afFieldLabelText name='desc'}}</label>
+		    {{> afFieldInput name='desc'}}
+		    {{#if afFieldIsInvalid name='desc'}}
+		    <span class="help-block">{{{afFieldMessage name='desc'}}}</span>
+		    {{/if}}
+		  	</div>
+
+		  	{{> afFieldInput name='author'}}
+		  	{{> afFieldInput name='createdAt'}}
+
+		  	<div class="form-group" align="center">
+		    <button type="submit" class="btn btn-primary">Save</button>
+		  	</div>
+			{{/autoForm}}
+			<br />
+		</div>
+		{{/if}}
+	</div>
+</template>

@@ -1,0 +1,188 @@
+<template name="LandingPage">
+	<head>
+	    <!-- Bootstrap Core CSS -->
+	    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	    <!-- Custom Fonts -->
+	    <link href="https://fonts.googleapis.com/css?family=Overlock" rel="stylesheet">
+	    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	    <!-- Theme CSS -->
+	    <link href="css/agency.min.css" rel="stylesheet">
+	</head>
+	<body id="page-top" class="index">
+	    <!-- Navigation -->
+	    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
+	        <div class="containerLP">
+	            <!-- Brand and toggle get grouped for better mobile display -->
+	            <div class="navbar-header page-scroll">
+	                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="background: #333; border: 1px solid #444; font-size: 14px;">
+	                    <span class="sr-only">Toggle navigation</span> <i class="fa fa-bars"></i>
+	                </button>
+	            </div>
+
+	            <!-- Collect the nav links, forms, and other content for toggling -->
+	            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	                <ul class="nav navbar-nav navbar-right">
+	                    <li class="hidden">
+	                        <a href="#page-top"></a>
+	                    </li>
+	                    <li>
+	                        <a class="page-scroll" href="#start">Start</a>
+	                    </li>
+	                    <li>
+	                        <a class="page-scroll" href="#about">About</a>
+	                    </li>
+	                    <li>
+	                        <a class="page-scroll" href="#team">Team</a>
+	                    </li>
+	                    <li>
+	                    	{{> Template.dynamic template = accounts}}
+	                    </li>
+	                </ul>
+	            </div>
+	            <!-- /.navbar-collapse -->
+	        </div>
+	        <!-- /.container-fluid -->
+	    </nav>
+
+	    <!-- Header -->
+	    <header>
+	        <div class="containerLP">
+	            <div class="intro-text">
+	            	<img src="images/Wedders_Transparent_500x175.png" align="center" />
+	            	<div class="intro-lead-in" style="color: #1f3b68; font-family: 'Overlock', cursive; font-size: 28px;">The Online Wedding Planning Solution</div>
+	            	<a href="#start" class="page-scroll btn btn-xl"><i class="fa fa-magic fa-fw"></i> Let's Get Started</a>
+	            </div>
+	        </div>
+	    </header>
+
+	    <!-- Start Section -->
+	    <section id="start">
+	        <div class="containerLP">
+	            <div class="row">
+	                <div class="col-lg-12 text-center">
+	                    <br /><br /><h3 class="section-heading">Getting Started</h3><br />
+		                <div id="carousel-example-generic" class="carousel slide" style="border: 1px solid #94BAE7;">
+	                        <!-- Indicators -->
+	                        <ol class="carousel-indicators hidden-xs">
+	                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+	                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+	                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+	                            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+	                            <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+	                        </ol>
+
+	                        <!-- Wrapper for slides -->
+	                        <div class="carousel-inner">
+	                            <div class="item active">
+	                                <img class="img-responsive img-full" src="images/Step1.png" alt="">
+	                            </div>
+	                            <div class="item">
+	                                <img class="img-responsive img-full" src="images/Step2.png" alt="">
+	                            </div>
+	                            <div class="item">
+	                                <img class="img-responsive img-full" src="images/Step3.png" alt="">
+	                            </div>
+	                            <div class="item">
+	                                <img class="img-responsive img-full" src="images/Step4.png" alt="">
+	                            </div>
+	                            <div class="item">
+	                                <img class="img-responsive img-full" src="images/Step5.png" alt="">
+	                            </div>
+	                        </div>
+
+	                        <!-- Controls -->
+	                        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+	                            <span class="icon-prev"></span>
+	                        </a>
+	                        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+	                            <span class="icon-next"></span>
+	                        </a>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </section>
+
+	    <!-- About Section -->
+	    <section id="about" class="bg-light-gray">
+	        <div class="containerLP">
+	            <div class="row">
+	                <div class="col-lg-12 text-center">
+	                    <h3 class="section-heading">About Wedders</h3>
+	                    <div class="row">
+	                		<div class="col-sm-6">
+	                    		<img src="images/Gemini.png" alt="" style="width: 50%; height: 50%">
+	                    	</div>
+	                    	<div class="col-sm-6">
+	                    		<img src="images/Meteor.png" alt="" style="width: 85%; height: 85%">
+	                    	</div>
+	                    </div>
+	                    <h3 class="section-subheading text-muted" style="font-weight: none; font-size: 20px; text-align: left;"><br />
+	                    	Over the last few months, Jonathan had been involved in many of his friends’ and families’ weddings. All of them were using Microsoft Excel to manage the administrative side of things, such as keeping track of the RSVP from guests, managing the guest list for multiple events (wedding ceremony, wedding dinner, wedding reception) etc.<br /><br />
+
+							However, as most of them were not very experienced with Excel, many had trouble managing their wedding plans efficiently. Having multiple spreadsheets containing overlapping information caused some of them to get confused, resulting in errors and mere frustration.<br /><br />
+
+							Thus, we have decided to help to-be-wed couples by making an easy-to-use web app as our Orbital project. It will help them manage guests and events list with greater ease, removing the need for over complicated Excel spreadsheets.
+	                    </h3>
+	                </div>
+	            </div>
+	        </div>
+	    </section>
+
+	    <!-- Team Section -->
+	    <section id="team">
+	        <div class="containerLP">
+	            <div class="row">
+	                <div class="col-lg-12 text-center">
+	                    <h3 class="section-heading">The Duo Team</h3>
+	                </div>
+	            </div>
+	            <div class="row">
+	                <div class="col-sm-6">
+	                    <div class="team-member">
+	                    	<img src="https://avatarfiles.alphacoders.com/928/92848.png" class="img-responsive img-circle" alt=""><br />
+	                        <a href="https://github.com/jonathantjm/" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Jonathan Tan</span></a>
+	                    </div>
+	                </div>
+	                <div class="col-sm-6">
+	                    <div class="team-member">
+	                        <img src="https://avatarfiles.alphacoders.com/509/50948.jpg" class="img-responsive img-circle" alt=""><br />
+	                        <a href="https://github.com/teclu" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Stanley Tay</span></a>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </section>
+
+	    <footer class="bg-light-gray">
+	        <div class="containerLP">
+	            <div class="row">
+	                <div class="col-md-4">
+	                </div>
+	                <div class="col-md-4">
+	                	<span class="copyright">Copyright &copy; Wedders 2017</span>
+	                </div>
+	                <div class="col-md-4">
+	                </div>
+	            </div>
+	        </div>
+	    </footer>
+
+	    <!-- jQuery -->
+	    <script src="vendor/jquery/jquery.min.js"></script>
+
+	    <!-- Bootstrap Core JavaScript -->
+	    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+	    <!-- Plugin JavaScript -->
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" integrity="sha384-mE6eXfrb8jxl0rzJDBRanYqgBxtJ6Unn4/1F7q4xRRyIw7Vdg9jP4ycT7x1iVsgb" crossorigin="anonymous"></script>
+
+	    <!-- Contact Form JavaScript -->
+	    <script src="js/jqBootstrapValidation.js"></script>
+	    <script src="js/contact_me.js"></script>
+
+	    <!-- Theme JavaScript -->
+	    <script src="js/agency.min.js"></script>
+
+	</body>
+</template>

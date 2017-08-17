@@ -1,0 +1,16 @@
+<template name="MasterGuestsList">
+    <input type="text" name="search" class="form-control" width="250px" placeholder="🔍 Search guests list">
+	{{#if searching}}
+		<div class="container">
+			<br /><p style="text-align: center"><img src="images/Circular_Loader.gif" /></p>
+		</div>
+	{{else}}
+		{{#each guests}}
+			{{> Guest}}
+		{{else}}
+			<div class="container">
+				<br />No guests found. How about <a href="create-guest">adding</a> a new guest?
+			</div>
+		{{/each}}
+	{{/if}}
+</template>

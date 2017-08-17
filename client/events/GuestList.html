@@ -1,0 +1,21 @@
+<template name = "GuestList">
+	<div class="container">
+		<h3><a href="/event/{{event._id}}" style="text-decoration: none;">{{event.name}}</a></h3>
+		<table border="0" style="border-top: 2px solid #007ea7; width: 100%;">
+			<tr>
+				<td valign="top" width="100px" style="padding-top: 10px;">
+					{{#if Template.subscriptionsReady}}
+						{{#if guestExists}}The following guests are invited to this event:{{/if}}
+						{{#each guestList}}
+							<li><a href = "/guest/{{_id}}">{{name}}</a></li>
+						{{else}}
+							No guests assigned yet. How about <a href="../guests">assigning</a> a guest to this event?
+						{{/each}}
+					{{else}}
+						<br /><p style="text-align: center"><img src="images/Circular_Loader.gif" /></p>
+					{{/if}}
+				</td>
+			</tr>
+		</table>
+	</div>
+</template>

@@ -1,0 +1,17 @@
+<template name="UpcomingEvent">
+
+	<div class="container" style="float: right; width: 49.5%; display: inline-block;">
+		<h2>Upcoming Event</h2>
+		{{#if Template.subscriptionsReady}}
+			{{#if eventExists}}
+			<p><b>Event Name:</b> <a href="/event/{{event._id}}" style="text-decoration: underline;">{{event.name}}</a></p>
+			<p><b>Date:</b> {{prettifyDate event.startDate}}</p>
+			<p><b>Number of Guests:</b> <a href="/guest-list/{{event._id}}" style="text-decoration: underline;">{{noOfGuests}}</a></p>
+			{{else}}
+			<p>No upcoming event as of now.</p>
+		{{/if}}
+		{{else}}
+			<p style="text-align: center"><img src="images/Circular_Loader.gif" /></p>
+		{{/if}}
+	</div>
+</template>

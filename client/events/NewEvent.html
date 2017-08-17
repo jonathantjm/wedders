@@ -1,0 +1,48 @@
+<template name="NewEvent">
+	<h3>Create New Event</h3><br />
+	<!--{{> quickForm collection="Events" id="insertEventsForm" type="insert" class="new-event-form"}}-->
+	{{#autoForm id="newEventForm" type="insert" collection="Events" validation="blur"}}
+
+  	<div class="form-group {{#if afFieldIsInvalid name='name'}}has-error{{/if}}">
+    <label class="control-label">{{afFieldLabelText name='name'}}*</label>
+    {{> afFieldInput name='name'}}
+    {{#if afFieldIsInvalid name='name'}}
+    <span class="help-block">{{{afFieldMessage name='name'}}}.</span>
+    {{/if}}
+  	</div>
+
+  	<div class="form-group {{#if afFieldIsInvalid name='address'}}has-error{{/if}}">
+    <label class="control-label">{{afFieldLabelText name='address'}}*</label>
+    {{> afFieldInput name='address'}}
+
+    {{#if afFieldIsInvalid name='address'}}
+    <span class="help-block">{{{afFieldMessage name='address'}}}.</span>
+    {{/if}}
+  	</div>
+
+  	<div class="form-group {{#if afFieldIsInvalid name='startDate'}}has-error{{/if}}">
+    <label class="control-label">{{afFieldLabelText name='startDate'}}*</label>
+    {{> afFieldInput name='startDate'}}
+    {{#if afFieldIsInvalid name='startDate'}}
+    <span class="help-block">{{{afFieldMessage name='startDate'}}}.</span>
+    {{/if}}
+  	</div>
+
+  	<div class="form-group {{#if afFieldIsInvalid name='desc'}}has-error{{/if}}">
+    <label class="control-label">{{afFieldLabelText name='desc'}}</label>
+    {{> afFieldInput name='desc'}}
+    {{#if afFieldIsInvalid name='desc'}}
+    <span class="help-block">{{{afFieldMessage name='desc'}}}.</span>
+    {{/if}}
+  	</div>
+    <i>*Denotes compulsory fields.</i>
+
+  	{{> afFieldInput name='author'}}
+  	{{> afFieldInput name='createdAt'}}
+
+  	<div class="form-group" align="center">
+    <button type="submit" class="btn btn-primary">Create Event</button>
+  	</div>
+
+	{{/autoForm}}
+</template>

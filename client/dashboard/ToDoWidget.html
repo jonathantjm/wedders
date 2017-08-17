@@ -1,0 +1,49 @@
+<template name="ToDoWidget">
+	<h2>To-Do List</h2>
+	{{#if Template.subscriptionsReady}}
+			<table border="0" style="width: 100%; ">
+				{{#each tasks}}
+				<tr>
+					<td valign="top">
+						{{#if checked}}
+							<b style="border-left: 5px solid #C6C6C6; text-decoration: line-through; color: #C6C6C6; padding-left: 10px;">{{desc}}</b>
+						{{else}}
+							<b style="border-left: 5px solid #94BAE7; padding-left: 10px;">{{desc}}</b>
+						{{/if}}<br />
+					</td>
+					<td valign="center" width="60px" style="text-align: center;">
+						[ {{#if checked}}<i class="fa fa-check" style="color: #039600;" title="Mark As Incomplete"></i>{{else}}<i class="fa fa-check" title="Mark As Complete"></i>{{/if}} | <i class="fa fa-trash-o" style="color: #D23400;" title="Delete"></i> ] 
+					</td>
+				</tr>
+				{{else}}
+					<tr>
+						<td>No tasks found! How about adding a new task?</td>
+					</tr>
+				{{/each}}
+			</table>
+	{{else}}
+		<p style="text-align: center"><img src="images/Circular_Loader.gif" /></p>
+	{{/if}}
+
+	{{#autoForm id="toDoWidget" type="insert" collection="Tasks"}}
+	<table border="0" style="width: 100%;">
+    	<tr>
+      		<td style="padding-top: 20px;" valign="top">
+			    <div class="form-group {{#if afFieldIsInvalid name='desc'}}has-error{{/if}}">
+			    	<center>{{> afFieldInput name='desc'}}</center>
+			    	{{#if afFieldIsInvalid name='desc'}}
+			    	<span class="help-block">{{{afFieldMessage name='desc'}}}.</span>
+			    	{{/if}}
+			    	{{> afFieldInput name='author'}}
+			  		{{> afFieldInput name='createdAt'}}
+			  	</div>
+      		</td>
+      		<td style="text-align: center; width: 50px;" valign="top">
+      			<div class="form-group">
+    				<button type="submit" class="btn btn-primary">+</button>
+  				</div>
+      		</td>
+    	</tr>
+	</table>
+	{{/autoForm}}
+</template>

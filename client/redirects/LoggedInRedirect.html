@@ -1,0 +1,17 @@
+<template name="LoggedInRedirect">
+		<script>
+        setInterval(function() {
+            var div = document.querySelector("#counter");
+            var count = div.textContent * 1 - 1;
+            div.textContent = count;
+            	if (count <= 0) {
+           	    	location.href="/dashboard";
+           		}
+        	}, 1000);
+    	</script>
+    <div id="containerLI">
+		<img src="images/Wedders_Transparent_500x175.png" align="center" />
+		<h2>You are now logged in!</h2><br />
+		<p style="font-size: 20px;">Redirecting to the dashboard in <b id="counter">3</b> seconds.</p>
+	</div>
+</template>
